@@ -2,19 +2,52 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Cool new better featuring hammer js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Draggable Organized Collections</title>
+    <link rel="stylesheet" href="css/external/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-<div class="container">
-    <div id="title" class="animate">Click/Press and drag</div>
+<body ng-app="gestureApp" ng-controller="gestureController" ng-init="initialize()">
+    <h2 class="media-element">Swipe up to un-favourite</h2>
+    <ul class="items">
+        <li class="title animate"
+              ng-class="item.elementState"
+              ng-repeat="item in collectionInformation.list"
+              hm-dragup="item.elementState = ''"
+              hm-swipeup="item.elementState = ''"
+              hm-dragdown="item.elementState = 'down'"
+              hm-swipedown="item.elementState = 'down'"
+              hm-tap="type='tapped'"
+              hm-options="{tap_always: true, swipe: true}"
+              style="margin-left: {{$index * 12}}%;"
+                >
+            {{item.name}}
+            <img ng-src="{{item.url}}">
+        </li>
+    </ul>
+    <h2 class="media-element active" style="margin-top: 150px;">Swipe down to favorite</h2>
+
+    <div class="add-element">
+        <h3>Add Element</h3>
+            <label>Name</label><input ng-model="collectionInformation.item.name"></span>
+            <label>Image Url</label><input ng-model="collectionInformation.item.url"></span>
+        <button ng-click="addItem(collectionInformation.item)">Add</button>
+    </div>
 </div>
-<div class="container">
-    <div id="circle" class="animate"></div>
-</div>
-<script src="js/external/jquery-2.1.1.js"></script>
-<script src="js/external/hammer.min.js"></script>
-<script src="js/hammer-move-element.js"></script>
+
+<script src="js/external/angular.js"></script>
+<script src="js/external/hammer.js"></script>
+<script src="js/external/angular-hammer.js"></script>
+<script src="js/external/lodash.js"></script>
+<script src="js/gesture-app.js"></script>
+<script src="js/gesture-controller.js"></script>
+<script>
+    if (document.addEventListener) {
+        document.addEventListener('touchmove', function(e){
+            e.preventDefault();
+        });
+    }
+</script>
 </body>
 </html>
