@@ -8,7 +8,7 @@ angular.module('gestureApp.gestureController', [])
  * Depends on underscore: http://lodash.com/
  */
 .controller('gestureController', ['$scope',
-  function($scope, _) {
+  function($scope) {
     /**
      * Setup page.
      */
@@ -26,7 +26,7 @@ angular.module('gestureApp.gestureController', [])
     };
 
     $scope.addItem = function(item) {
-        $scope.collectionInformation.list.push(_.cloneDeep(item));
+        $scope.collectionInformation.list.push(_.clone(item));
         item.name = "";
         item.url = "";
     };
