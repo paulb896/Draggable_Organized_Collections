@@ -1,19 +1,18 @@
 ;'use strict';
 
-angular.module('gestureApp.gestureController', [])
+angular.module('gestureApp.gestureController', ['underscore'])
 
 /*
  * Controller for gestures
  *
  * Depends on underscore: http://lodash.com/
  */
-.controller('gestureController', ['$scope',
-  function($scope) {
+.controller('gestureController', ['$scope', '_',
+  function($scope, _) {
     /**
      * Setup page.
      */
     $scope.initialize = function() {
-
         var collection = [
             {id: 1, name:"Ghostbusters", url:"http://www.emoticonswallpapers.com/avatar/games/Ghostbusters-2.gif"},
             {id: 2, name:"SSX", url:"http://a.psblogstatics.com/wp-content/uploads/avatars/avatar_395946.jpg?m=1327688931"},
