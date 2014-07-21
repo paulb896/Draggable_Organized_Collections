@@ -26,13 +26,13 @@
             <img ng-src="{{item.url}}">
         </li>
     </ul>
-    <h2 class="media-element active" style="margin-top: 150px;">Swipe down to favorite</h2>
+    <h2 class="media-element active" style="margin-top: 100px;">Swipe down to favorite</h2>
 
     <div class="add-element">
         <h3>Add Element</h3>
             <label>Name</label><input ng-model="collectionInformation.item.name"></span>
             <label>Image Url</label><input ng-model="collectionInformation.item.url"></span>
-        <button ng-click="addItem(collectionInformation.item)">Add</button>
+        <button ng-click="addItem(collectionInformation.item)" ng-disabled="!collectionInformation.item">Add</button>
     </div>
 </div>
 
