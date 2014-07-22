@@ -12,15 +12,15 @@
     <h2 class="media-element">Swipe up to un-favourite</h2>
     <ul class="items">
         <li class="title animate"
-              ng-class="item.elementState"
+              ng-class="item.elementState || { 'item-selected' : true}"
               ng-repeat="item in collectionInformation.list"
               hm-dragup="item.elementState = ''"
               hm-swipeup="item.elementState = ''"
               hm-dragdown="item.elementState = 'down'"
               hm-swipedown="item.elementState = 'down'"
-              hm-tap="type='tapped'"
+              hm-tap="toggleSelected(item)"
               hm-options="{tap_always: true, swipe: true}"
-              style="margin-left: {{$index * 12}}%;"
+              style="margin-left: {{$index * 21}}%;"
                 >
             {{item.name}}
             <img ng-src="{{item.url}}">

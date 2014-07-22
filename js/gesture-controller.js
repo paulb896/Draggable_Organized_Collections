@@ -27,6 +27,14 @@ angular.module('gestureApp.gestureController', ['underscore'])
         item.url = "";
     };
 
+    $scope.toggleSelected = function(item){
+        if (item.selected) {
+            item.selected = false;
+        } else {
+            item.selected = true;
+        }
+    };
+
     $scope.selectItem = function(item) {
       item.selected = true;
     };
