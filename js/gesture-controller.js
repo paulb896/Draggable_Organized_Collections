@@ -39,3 +39,4 @@ angular.module('gestureApp.gestureController', ['underscore'])
       item.selected = true;
     };
 }]);
+

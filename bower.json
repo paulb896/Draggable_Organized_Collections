@@ -1,0 +1,11 @@
+{
+  "name": "draggable-organized-collections",
+  "description": "Draggable Organized Collections",
+  "version": "0.0.1",
+  "author": "paulb896",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "angular": "~1.2.0",
+    "hammerjs": "~2.0"
+  }
+}

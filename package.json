@@ -1,0 +1,19 @@
+{
+  "name": "angular-draggable-collections",
+  "version": "0.1.1",
+  "description": "AngularJS and HammerJS movable elements",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulb896/Draggable_Organized_Collections.git"
+  },
+  "keywords": [
+    "angularjs",
+    "hammer.js"
+  ],
+  "author": "paulb896",
+  "readmeFilename": "README.md",
+  "dependencies": {},
+  "devDependencies": {
+    "bower":"*"
+  }
+}
